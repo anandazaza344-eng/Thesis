@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เรื่องวุ่นๆ วัยรุ่นกลัวสังคม</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- เพิ่มฟอนต์ Prompt จาก Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- ตั้งค่า Tailwind ให้ใช้ Prompt เป็นฟอนต์หลัก -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-indigo-950 text-indigo-50 antialiased font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#1e1b4b]/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="border-2 border-dashed border-white/50 px-2 py-1 font-black text-sm tracking-tighter">
+                เรื่องวุ่นๆ วัยรุ่นกลัวสังคม</div>
+            <div class="flex gap-4 md:gap-8 items-center text-[10px] md:text-xs uppercase font-bold">
+                <a href="#" class="nav-icon"><span class="material-symbols-outlined">home</span> Home</a>
+                <a href="#video" class="nav-icon"><span class="material-symbols-outlined">play_circle</span> Video</a>
+                <a href="#work" class="nav-icon"><span class="material-symbols-outlined">folder</span> Work</a>
+                <a href="#about" class="nav-icon"><span class="material-symbols-outlined">person</span> About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BANNER SECTION -->
+    <header class="banner-container">
+        <div class="banner-bg">
+            <img src="image/bg.png" alt="Lobby Background">
+        </div>
+        <div class="banner-content">
+            <img src="image/logo.png" alt="Logo" class="main-logo">
+        </div>
+        <div class="banner-overlay"></div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 relative z-10">
+
+        <!-- VIDEO PLAYER SECTION -->
+        <section id="video" class="mb-20">
+            <div class="video-frame shadow-[0_0_50px_rgba(79,70,229,0.3)]">
+                <div class="aspect-video bg-black rounded-xl overflow-hidden">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/6raqfUssCBA?si=rhOh4mIwS-bZp3Ke"
+                        frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- DISORDER SECTION -->
+        <section id="anxiety" class="mb-24">
+            <div class="text-center mb-12">
+                <h2
+                    class="text-4xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400 uppercase">
+                    Social Anxiety Disorder </h2>
+                <p class="text-indigo-300 mt-4 font-light text-base leading-relaxed">
+                    Motion Graphic บอกเล่าปัจจัย อาการ ที่ทำให้คนคนหนึ่งกลัวการเข้าสังคม <br>
+                    <span class="font-semibold text-white">"การกลัวสังคมไม่ใช่เรื่องแปลกประหลาด
+                        แต่คืออาการที่ต้องได้รับการเยียวยา"</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- WORK SECTION -->
+        <section id="work" class="mb-32">
+            <div class="text-center mb-12">
+                <h2
+                    class="text-4xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400 uppercase">
+                    Work </h2>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto px-4 group">
+                <div class="work-card relative">
+                    <button onclick="changeSlide(-1)"
+                        class="absolute -left-2 md:-left-6 top-1/2 -translate-y-1/2 z-30 bg-white text-black w-10 h-10 md:w-12 md:h-12 rounded-full border-4 border-black shadow-[4px_4px_0px_#000] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all flex items-center justify-center hover:bg-cyan-400">
+                        <span class="material-symbols-outlined font-black">chevron_left</span>
+                    </button>
+                    <button onclick="changeSlide(1)"
+                        class="absolute -right-2 md:-right-6 top-1/2 -translate-y-1/2 z-30 bg-white text-black w-10 h-10 md:w-12 md:h-12 rounded-full border-4 border-black shadow-[4px_4px_0px_#000] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all flex items-center justify-center hover:bg-cyan-400">
+                        <span class="material-symbols-outlined font-black">chevron_right</span>
+                    </button>
+
+                    <div
+                        class="relative aspect-[16/9] overflow-hidden rounded-lg border-4 border-white shadow-[15px_15px_0px_#111] bg-black">
+                        <!-- Slides (1-6) -->
+                        <div
+                            class="work-slide absolute inset-0 opacity-100 transition-opacity duration-700 ease-in-out">
+                            <img src="image/m1.png" class="w-full h-full object-cover">
+                            <div
+                                class="absolute bottom-4 left-4 bg-white text-black px-3 py-1 font-bold text-xs border-2 border-black">
+                                Work #01</div>
+                        </div>
+                        <div class="work-slide absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out">
+                            <img src="image/m2.png" class="w-full h-full object-cover">
+                            <div
+                                class="absolute bottom-4 left-4 bg-white text-black px-3 py-1 font-bold text-xs border-2 border-black">
+                                Work #02</div>
+                        </div>
+                        <div class="work-slide absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out">
+                            <img src="image/m3.png" class="w-full h-full object-cover">
+                            <div
+                                class="absolute bottom-4 left-4 bg-white text-black px-3 py-1 font-bold text-xs border-2 border-black">
+                                Work #03</div>
+                        </div>
+                        <div class="work-slide absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out">
+                            <img src="image/m4.png" class="w-full h-full object-cover">
+                            <div
+                                class="absolute bottom-4 left-4 bg-white text-black px-3 py-1 font-bold text-xs border-2 border-black">
+                                Work #04</div>
+                        </div>
+                        <div class="work-slide absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out">
+                            <img src="image/m5.png" class="w-full h-full object-cover">
+                            <div
+                                class="absolute bottom-4 left-4 bg-white text-black px-3 py-1 font-bold text-xs border-2 border-black">
+                                Work #05</div>
+                        </div>
+                        <div class="work-slide absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out">
+                            <img src="image/m6.png" class="w-full h-full object-cover">
+                            <div
+                                class="absolute bottom-4 left-4 bg-white text-black px-3 py-1 font-bold text-xs border-2 border-black">
+                                Work #06</div>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none">
+                        </div>
+                    </div>
+
+                    <!-- Dots -->
+                    <div class="flex justify-center gap-3 mt-10">
+                        <div onclick="currentSlideTo(0)"
+                            class="dot w-3 h-3 rounded-full bg-white transition-all cursor-pointer"></div>
+                        <div onclick="currentSlideTo(1)"
+                            class="dot w-3 h-3 rounded-full bg-white/30 transition-all cursor-pointer"></div>
+                        <div onclick="currentSlideTo(2)"
+                            class="dot w-3 h-3 rounded-full bg-white/30 transition-all cursor-pointer"></div>
+                        <div onclick="currentSlideTo(3)"
+                            class="dot w-3 h-3 rounded-full bg-white/30 transition-all cursor-pointer"></div>
+                        <div onclick="currentSlideTo(4)"
+                            class="dot w-3 h-3 rounded-full bg-white/30 transition-all cursor-pointer"></div>
+                        <div onclick="currentSlideTo(5)"
+                            class="dot w-3 h-3 rounded-full bg-white/30 transition-all cursor-pointer"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHARACTERS SECTION -->
+        <section id="characters" class="mb-32">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-4xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400 uppercase">
+                    Characters </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4">
+                <!-- Character 1 -->
+                <div
+                    class="bg-[#121212] border border-white/5 p-6 rounded-2xl shadow-2xl group transition hover:border-indigo-500/50">
+                    <h3 class="text-2xl font-black text-white mb-4">บูท</h3>
+                    <div class="bg-white rounded-lg overflow-hidden mb-4 aspect-square">
+                        <img src="image/b.png" class="w-full h-full object-contain">
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        บูท - ดูภายนอกเหมือนเด็กธรรมดา แต่จริงๆ เป็นคนที่กลัวสังคมอย่างมาก
+                    </p>
+                </div>
+                <!-- Character 2 -->
+                <div
+                    class="bg-[#121212] border border-white/5 p-6 rounded-2xl shadow-2xl group transition hover:border-indigo-500/50">
+                    <h3 class="text-2xl font-black text-white mb-4">ผู้บรรยายคุง</h3>
+                    <div class="bg-white rounded-lg overflow-hidden mb-4 aspect-square">
+                        <img src="image/c.jpg" class="w-full h-full object-contain">
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        ผู้บรรยายคุง - ทำหน้าที่บรรยายเรื่องโรคกลัวสังคมของบูทให้คนดูเข้าใจง่ายขึ้น
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="relative">
+        <div class="bg-[#d1d5db] text-indigo-950 rounded-[4rem] rounded-b-none p-8 md:p-16 min-h-[500px]">
+            <div class="grid md:grid-cols-12 gap-10 items-start">
+                <div class="md:col-span-5 relative text-center md:text-left">
+                    <h2 class="text-6xl font-black italic tracking-tighter mb-6">About</h2>
+                    <div
+                        class="relative w-full aspect-square max-w-[320px] mx-auto md:mx-0 overflow-hidden rounded-full border-8 border-white shadow-xl">
+                        <img src="image/me.jpg" class="w-full h-full object-cover" alt="Profile">
+                    </div>
+                </div>
+                <div class="md:col-span-7 pt-10">
+                    <div class="space-y-6 text-base md:text-lg leading-relaxed">
+                        <div class="space-y-1">
+                            <p class="font-bold text-2xl">Ananda Kiti</p>
+                        </div>
+                            <p><strong>Birthday:</strong> Aug 15, 2003</p>
+                        <p class="text-justify font-light">
+                            I am a passionate and creative individual with a strong interest in graphic design. My
+                            journey in the creative field began early in my life, which led me to pursue studies in
+                            graphic design and visual communication.
+                        </p>
+                        <p><strong>Email:</strong> ananda.kiti2513@gmail.com</p>
+                         <p><strong>Facebook:</strong> Ananda Kiti</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#d1d5db] py-12 text-center text-indigo-900/50 text-[10px] tracking-[0.5em] uppercase font-bold">
+        © 2026 Social anxiety disorder Copyright
+    </footer>
+
+    <!-- Slider Script -->
+    <script>
+        let slideIndex = 0;
+        let autoPlay;
+        const slides = document.querySelectorAll('.work-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlides(n) {
+            if (n >= slides.length) slideIndex = 0;
+            if (n < 0) slideIndex = slides.length - 1;
+            slides.forEach(s => s.style.opacity = "0");
+            dots.forEach(d => {
+                d.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+                d.style.width = "12px";
+            });
+            slides[slideIndex].style.opacity = "1";
+            dots[slideIndex].style.backgroundColor = "white";
+            dots[slideIndex].style.width = "24px";
+        }
+
+        function changeSlide(n) {
+            slideIndex += n;
+            showSlides(slideIndex);
+            resetTimer();
+        }
+
+        function currentSlideTo(n) {
+            slideIndex = n;
+            showSlides(slideIndex);
+            resetTimer();
+        }
+
+        function startTimer() {
+            autoPlay = setInterval(() => {
+                slideIndex++;
+                showSlides(slideIndex);
+            }, 5000);
+        }
+
+        function resetTimer() {
+            clearInterval(autoPlay);
+            startTimer();
+        }
+
+        showSlides(slideIndex);
+        startTimer();
+    </script>
+</body>
+
+</html>
